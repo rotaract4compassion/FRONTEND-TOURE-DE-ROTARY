@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts loaded via next/font/google in src/app/layout.tsx */
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy text-white font-sans;
+    min-height: 100dvh;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-bronze ring-offset-2 ring-offset-navy;
+  }
+
+  :focus:not(:focus-visible) {
+    @apply outline-none ring-0;
+  }
+}
+
+@layer utilities {
+  /* Animation stagger helpers */
+  .delay-75  { animation-delay: 75ms;  }
+  .delay-150 { animation-delay: 150ms; }
+  .delay-225 { animation-delay: 225ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+
+  /* Hide scrollbar */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Safe area insets */
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 1rem); }
+  .pt-safe { padding-top:    env(safe-area-inset-top, 0);       }
+
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty;  }
+}
+
+
+/* Participant pages — dark appearance overrides for the new light-first designs. */
+html[data-participant-theme='dark'] .participant-fundraise {
+  background: #07152f !important;
+  color: rgba(255,255,255,.92) !important;
+}
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-white'] { background-color: #0d1b3d !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-[#f6f8fb]'] { background-color: #07152f !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-[#f8fafc]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-[#f7faff]'] { background-color: #101f40 !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-[#eff6ff]'] { background-color: #18345f !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-[#eaf0f6]'] { background-color: rgba(255,255,255,.10) !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='text-[#10233f]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='text-[#334155]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='text-[#475569]'] { color: rgba(255,255,255,.78) !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='text-[#64748b]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='text-[#94a3b8]'] { color: rgba(255,255,255,.45) !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='text-[#2563eb]'] { color: #7db3ff !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#dce5ef]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#edf1f5]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#e4eaf1]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#dbe7f4]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#cbd8e6]'],
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#b9cbe0]'] { border-color: rgba(255,255,255,.10) !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='bg-[#102f59]'] { background-color: #0b2448 !important; }
+html[data-participant-theme='dark'] .participant-fundraise [class*='border-[#cfe0f7]'] { border-color: rgba(125,179,255,.25) !important; }
+
+html[data-participant-theme='dark'] .participant-profile {
+  background: #07152f !important;
+  color: rgba(255,255,255,.92) !important;
+}
+html[data-participant-theme='dark'] .participant-profile [class*='bg-white'] { background-color: #0d1b3d !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='bg-[#f5f7fb]'] { background-color: #07152f !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='bg-[#f9fafc]'] { background-color: #101f40 !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='bg-[#eaf1fb]'],
+html[data-participant-theme='dark'] .participant-profile [class*='bg-[#edf3fb]'] { background-color: #18345f !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#101d35]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#18263e]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#26354d]'] { color: rgba(255,255,255,.90) !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#4e5d71]'] { color: rgba(255,255,255,.68) !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#7b8798]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#8995a6]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#8b98aa]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#8a96a7]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#929dad]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#9aa6b6]'],
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#aab3c0]'] { color: rgba(255,255,255,.45) !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='text-[#2456a6]'] { color: #7db3ff !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='border-[#e1e7f0]'],
+html[data-participant-theme='dark'] .participant-profile [class*='border-[#edf0f5]'],
+html[data-participant-theme='dark'] .participant-profile [class*='border-[#dfe6f0]'],
+html[data-participant-theme='dark'] .participant-profile [class*='border-[#dfe5ed]'],
+html[data-participant-theme='dark'] .participant-profile [class*='border-[#eef1f5]'] { border-color: rgba(255,255,255,.10) !important; }
+html[data-participant-theme='dark'] .participant-profile input { color: rgba(255,255,255,.92) !important; border-color: rgba(255,255,255,.12) !important; }
+html[data-participant-theme='dark'] .participant-profile input:focus { background: #13264b !important; border-color: #4f8fe8 !important; }
+html[data-participant-theme='dark'] .participant-profile input::placeholder { color: rgba(255,255,255,.32) !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='border-[#ead8d5]'] { border-color: rgba(216,91,77,.30) !important; }
+html[data-participant-theme='dark'] .participant-profile [class*='bg-[#fff7f6]'] { background-color: rgba(216,91,77,.08) !important; }
